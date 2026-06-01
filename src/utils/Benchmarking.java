@@ -1,0 +1,22 @@
+package utils;
+
+import java.util.concurrent.Callable;
+import models.Resultado;
+
+public class Benchmarking {
+    public static Resultado medirTiempo(Callable<Void> funcion, String algoritmo, String escenario, int sample) {
+        long startTime = System.nanoTime();
+        try {
+            long inicio = System.nanoTime();
+            funcion.call();
+            long fin = System.nanoTime();
+
+            double duracio = fin - inicio;
+
+            return new Resultado(algoritmo, escenario, sample, duracio, duracio / 1_000_000.0);
+        } catch (Exception e) {
+            throw new RuntimeException("Error al ejecutar la función de ordenamiento");
+        }
+        
+    }
+}
