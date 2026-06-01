@@ -5,7 +5,6 @@ import models.Resultado;
 
 public class Benchmarking {
     public static Resultado medirTiempo(Callable<Void> funcion, String algoritmo, String escenario, int sample) {
-        long startTime = System.nanoTime();
         try {
             long inicio = System.nanoTime();
             funcion.call();
