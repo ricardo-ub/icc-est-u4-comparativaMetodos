@@ -4,7 +4,17 @@ import models.Persona;
 
 public class SortPersonaMethods {
     public void insertSort(Persona[] personas) {
-        
+        if (personas == null || personas.length < 2) return;
+        for (int i = 1; i < personas.length; i++) {
+            Persona key = personas[i];
+            double criterioKey = key.getCriterioOrdenamiento();
+            int j = i - 1;
+            while (j >= 0 && personas[j].getCriterioOrdenamiento() > criterioKey) {
+                personas[j + 1] = personas[j];
+                j--;
+            }
+            personas[j + 1] = key;
+        }
     }
 
     public void quickSort(Persona[] personas, int inicio, int fin) {

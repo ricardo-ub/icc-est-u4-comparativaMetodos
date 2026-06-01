@@ -8,7 +8,14 @@ import utils.Benchmarking;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        ejecutarEscenarioDesordenado(0, null);
+        SortPersonaMethods sortMethods = new SortPersonaMethods();
+        ejecutarEscenarioDesordenado(10000, sortMethods);
+        ejecutarEscenarioCasiOrdenado(10000, sortMethods);
+
+        System.out.println();
+
+        ejecutarEscenarioDesordenado(50000, sortMethods);
+        ejecutarEscenarioCasiOrdenado(50000, sortMethods);
     }
 
     public static void ejecutarEscenarioDesordenado(int size, SortPersonaMethods sortMethods) {
@@ -29,8 +36,9 @@ public class App {
 
             Resultado r1 = Benchmarking.medirTiempo(funcionInsercion, "Insertion Sort", "Desordenado", size);
             Resultado r2 = Benchmarking.medirTiempo(funcionQuickSort, "Quick Sort", "Desordenado", size);
-            System.out.println(r1);
-            System.out.println(r2);
+
+            System.out.println("Desordenado | " + r1.getAlgoritmo() + " | "+ r1.getSample() + " | " + r1.getTiempoMilis() + " ms");
+            System.out.println("Desordenado | " + r2.getAlgoritmo() + " | "+ r2.getSample() + " | " + r2.getTiempoMilis() + " ms");
     }
 
     public static void ejecutarEscenarioCasiOrdenado(int size, SortPersonaMethods sortMethods) {
@@ -57,8 +65,9 @@ public class App {
 
             Resultado r1 = Benchmarking.medirTiempo(funcionInsercion, "Insertion Sort", "Casi Ordenado", size);
             Resultado r2 = Benchmarking.medirTiempo(funcionQuickSort, "Quick Sort", "Casi Ordenado", size);
-            System.out.println(r1);
-            System.out.println(r2);
+
+            System.out.println("Casi ordenado + 1 persona | " + r1.getAlgoritmo() + " | "+ r1.getSample() + " | " + r1.getTiempoMilis() + " ms");
+            System.out.println("Casi ordenado + 1 persona | " + r2.getAlgoritmo() + " | "+ r2.getSample() + " | " + r2.getTiempoMilis() + " ms");
     }
     
     public static Persona[] generarPersonas(int cantidad) {
