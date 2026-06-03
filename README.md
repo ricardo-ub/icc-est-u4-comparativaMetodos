@@ -50,11 +50,11 @@ Tamaño de muestra | Tiempo Insercion | Tiempo QuickSort | Algoritmo más rápid
 ### Tabla 2. Escenario 2: arreglo ordenado más una nueva persona
 Tamaño de muestra | Tiempo Insercion | Tiempo QuickSort | Algoritmo más rápido | Observación
 
-    10001         | 1.4312 ms        | 5.7065 ms        | Insertion Sort       | Quick Sort notablemente más rápido que Insertion
+    10001         | 1.4312 ms        | 5.7065 ms        | Insertion Sort       | Ya estaba casi ordenado Insertion necesito hacer pocos movimientos
 
-    50001         | 6.8121 ms        | 46.7377 ms       | Insertion Sort       | Aumento la diferencia de rendimienot al incrementar el tamaño de datos
+    50001         | 6.8121 ms        | 46.7377 ms       | Insertion Sort       | Insertion mantuvo sus tiempos bajos en cambio Quick Sort no
 
-    100001        | 9.2151 ms        | 148.6194 ms      | Insertion Sort       | Insertion mostro tiempos muy elevados y Quick mantuvo su eficiencia
+    100001        | 9.2151 ms        | 148.6194 ms      | Insertion Sort       | El crecimieto del tamaño afectó poco a Insertion Sort porque ya estaba casi ordenado el arreglo
 
 
 ## Analisis requerido
