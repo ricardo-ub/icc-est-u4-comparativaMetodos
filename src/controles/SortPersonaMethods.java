@@ -19,9 +19,12 @@ public class SortPersonaMethods {
 
     public void quickSort(Persona[] personas, int inicio, int fin) {
         if (inicio < fin){
-            int indicePivote = particionar(personas,inicio,fin);
-            quickSort(personas,inicio,indicePivote-1);
-            quickSort(personas,indicePivote+1,fin);
+            int medio = inicio + (fin - inicio) / 2;
+            intercambiar(personas, medio, fin);
+
+            int indicePivote = particionar(personas, inicio, fin);
+            quickSort(personas, inicio, indicePivote - 1);
+            quickSort(personas, indicePivote + 1, fin);
         }        
     }
 

@@ -30,6 +30,6 @@ public class Persona {
         for (int i = 0; i < nombre.length(); i++) {
             valorNombre += nombre.charAt(i);
         }
-        return edad*100000 + valorNombre;
+        return edad * 100000 + valorNombre;
     }
 }

@@ -10,11 +10,11 @@ public class Benchmarking {
             funcion.call();
             long fin = System.nanoTime();
 
-            double duracio = fin - inicio;
+            double duracion = fin - inicio;
 
-            return new Resultado(algoritmo, escenario, sample, duracio, duracio / 1_000_000.0);
+            return new Resultado(algoritmo, escenario, sample, duracion, duracion / 1_000_000.0);
         } catch (Exception e) {
-            throw new RuntimeException("Error al ejecutar la función de ordenamiento");
+            throw new RuntimeException("Error al ejecutar la función de ordenamiento", e);
         }
         
     }
